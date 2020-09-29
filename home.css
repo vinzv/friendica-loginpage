@@ -1,0 +1,78 @@
+.mod-home.is-not-singleuser, .mod-login {
+        background-image: linear-gradient(to right, rgba(0,0,0, 0.7) , rgba(0,0,0, 0.4)), url(../../../bg-home-noovi.jpg) !important;
+}
+.mod-home.is-not-singleuser nav.navbar, .mod-login nav.navbar {
+        background-color: rgba(17, 17, 17, 0.93);
+}
+#homecontent {
+        font-size: 18px;
+        display: flex;
+        padding: 1em;
+}
+#register-link {
+    /*background: #444488;*/
+}
+
+.homeinfocontainer {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-column-gap: 15px;
+        padding: 10px;
+}
+.homeinfobox p {
+        text-align: justify;
+}
+#homeinfo {
+        font-size: 10px;
+        font-style: italic;
+        color: #444;
+        display: flex;
+        padding: 1em;
+}
+#homeinfo a {
+        color: #444;
+        text-decoration: underline;
+}
+#login-form-toggle {
+        display: none;
+}
+#c1 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+}
+#c2 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+}
+#c3 {
+        grid-column-start: 3;
+        grid-column-end: 4;
+}
+#login-form-toggle {
+        display: none;
+}
+
+@media (min-width: 320px) and (max-width: 990px) {
+        .homeinfocontainer {
+                display: block;
+        }
+        div#content .row {
+                display: flex;
+                flex-flow: column;
+        }
+        #homecontent {
+                display: block;
+        }
+        #login-form-toggle {
+                display: block;
+                margin-top: 1.5em;
+        }
+        .login-form {
+                display: none;
+                width: 90%;
+                margin: 1em auto;
+        }
+        .login-content {
+                order: 1;
+        }
+}

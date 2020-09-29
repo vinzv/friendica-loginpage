@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="home.css">
+        <script>
+        $(document).ready(function() {
+                var $window = $(window);
+
+                function checkWidth() {
+                        var windowsize = $window.width();
+                        if ($(window).width() < 990) {
+                        $('.login-form').removeClass('login-form').addClass('login-form collapse');
+                        $("#login-submit-button").show()
+                } else {
+                        $('.login-form').removeClass('login-form').addClass('login-form');
+                        $("#login-submit-button").hide()
+                }
+        }
+        checkWidth();
+        $(window).resize(checkWidth);
+        });
+        </script>
+        <script>
+        $(document).ready(function() {
+                var known = { en: true, de: true};
+                var lang  = ((navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || 'en').substr(0, 2);
+                if(!known[lang])
+                lang = 'en';
+                $('section#homecontent[lang='  + lang + ']').show();
+                $('section#homecontent[lang!='  + lang + ']').hide();
+                $('div.homeinfocontainer[lang=' + lang + ']').show();
+                $('div.homeinfocontainer[lang!=' + lang + ']').hide();
+                $('div#login-form-toggle[lang=' + lang + ']').show();
+                $('div#login-form-toggle[lang!=' + lang + ']').hide();
+                $('section#homeinfo[lang='  + lang + ']').show();
+                $('section#homeinfo[lang!='  + lang + ']').hide();
+        });
+        </script>
+<section id="homecontent" lang="de">
+        <div id="home_wrapper">
+        <h1>Noovi ⛺</h1>
+
+        <div id="">
+                <p>Noovi ist Bestandteil der weltweiten dezentralen sozialen Netzwerke, die Föderation, das Fediversum. Die Föderation stellt einen Gegenpol zu Facebook &amp; Co dar. Im Gegensatz dazu, werden die Zugangspunkte zur Föderation im Allgemeinen von Einzelpersonen betrieben, nicht von Konzernen. Noovi ist ein solcher Zugangspunkt, eine Node, ein Knoten, ein Pod.</p>
+                <p>Wie in den kommerziellen Netzwerken, kann man sich hier weltweit mit Usern im Netzwerk verbinden. Allerdings gibt es keine Werbung, kein Tracking, keine Analyse oder Weitergabe deiner Daten oder deines Userverhaltens</p>
+        </div>
+        </div>
+        <div id="login-form-toggle" class="text-center" lang="de">
+                <button type="submit" name="submit" id="login-submit-button" class="btn btn-primary" data-toggle="collapse" data-target=".login-form" value="Anmeldung" onclick="location.href='#top'">Anmeldung</button>
+        </div>
+</section>
+
+<div class="homeinfocontainer" lang="de">
+    <div id="c1" class="homeinfobox">
+            <h4>Was ist Friendica?</h4>
+            <p>Friendica ist eine dezentrale soziale Netzwerkplattform, die jeder nutzen kann, um seinen eigenen sozialen Netzwerkknoten aufzubauen. Sie interagiert mit vielen anderen FLOSS Microblogging- und Social-Networking-Plattformen sowie mit einigen &quot;walled gardens&quot;.</p>
+            <p><a href="https://friendi.ca" target="_blank">Erfahre mehr unter friendi.ca</a><br><a href="https://dir.friendica.social/servers" target="_blank">Finde einen offenen Friendica-Knotenpunkt, dem du beitreten kannst</a></p>
+    </div>
+    <div id="c2" class="homeinfobox">
+            <h4>Mit welchen anderen Netzwerken interagiert es?</h4>
+            <p>Jedes Netzwerk, das entweder das DFRN2-, OStatus- oder Diaspora*-Protokoll spricht. Derzeit umfasst diese Liste: Diaspora*, friendica, ganggo, GNU social, Hubzilla, Mastodon, Pleroma, postActiv und Socialhome.</p>
+            <p><a href="http://fediverse.party" target="_blank">Erfahre mehr unter fediverse.party</a></p>
+    </div>
+    <div id="c3" class="homeinfobox">
+            <h4>Ist es schwer, Friendica zu betreiben?</h4>
+            <p>Nein, ganz und gar nicht! Du ben&ouml;tigst einen LAMP-Server. Die meisten Shared Hosting-Dienste, die MySQL, PHP und die M&ouml;glichkeit zum Ausf&uuml;hren von Cron-Jobs anbieten, reichen v&ouml;llig aus. Wenn du deinen eigenen (virtuellen) Server hast, reicht f&uuml;r einen kleinen Friendica-Server so etwas wie ein Raspberry2B von den Spezifikationen aus.</p>
+            <p><a href="https://github.com/friendica/friendica" target="_blank">Den Quellcode herunterladen</a></p>
+    </div>
+</div>
+
+<section id="homeinfo" lang="de">
+        <p>Diese Webseite verwendet nur technisch notwendige Cookies. Mehr dazu unter <a href="/tos">Datenschutz</a> &middot; <a href="/friendica">Impressum, Kontakt</a> und <a href="/tos">Nutzungsbedingungen</a>.</p>
+</section>
+
+<section id="homecontent" lang="en" style="display:none">
+        <div id="home_wrapper">
+
+        <h1>Noovi ⛺</h1>
+
+        <div id="">
+                <p>Noovi is part of the worldwide decentralized social networks, the federation, the federation universe. The federation represents an antipole to Facebook &amp; Co. In contrast, access points to the Federation are generally operated by individuals, not corporations. Socivitas is such an access point, a node, a node, a pod.</p>
+                <p>Just like in commercial networks, you can connect to users in the network worldwide. However, there is no advertising, no tracking, no analysis or disclosure of your data or your user behavior</p>
+        </div>
+        </div>
+        <div id="login-form-toggle" class="text-center" lang="en">
+                <button type="submit" name="submit" id="login-submit-button" class="btn btn-primary" data-toggle="collapse" data-target=".login-form" value="Login">Login</button>
+        </div>
+</section>
+
+<div class="homeinfocontainer" lang="en" style="display:none">
+    <div id="c1" class="homeinfobox">
+            <h4>What is Friendica?</h4>
+            <p>Friendica is a decentral social network platform everybody can use to setup their own social networking node. It interacts with many other FLOSS microblogging and social networking platforms as well as some walled gardens.</p>
+            <p><a href="https://friendi.ca" target="_blank">Learn more at friendi.ca</a><br><a href="https://dir.friendica.social/servers" target="_blank">Find an open Friendica node to join</a></p>
+    </div>
+    <div id="c2" class="homeinfobox">
+            <h4>What other networks does it interact with?</h4>
+            <p>Every network that speaks either the DFRN2, OStatus or diaspora* protocol. Currently this list includes: diaspora*, friendica, ganggo, GNU social, Hubzilla, Mastodon, Pleroma, postActivi and Socialhome.</p>
+            <p><a href="http://fediverse.party" target="_blank">Learn more at fediverse.party</a></p>
+    </div>
+    <div id="c3" class="homeinfobox">
+            <h4>Is it hard to run Friendica?</h4>
+            <p>No, not at all! You need a LAMP server, most shared hosting services that offer MySQL, PHP and the ability to run cron jobs will do just fine. If you have your own (virtual) server, for a small Friendica server something like a Raspberry2B is sufficenent from the specs.</p>
+            <p><a href="https://github.com/friendica/friendica" target="_blank">Get the source code</a></p>
+    </div>      
+</div>
+                
+<section id="homeinfo" lang="en" style="display:none">
+        <p>This website only uses technically necessary cookies. For more information see <a href="/tos">Privacy</a> &middot; <a href="/friendica">Imprint, Contact</a> and <a href="/tos">Terms of Use</a>.</p>
+</section>
